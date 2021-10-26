@@ -3,6 +3,8 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <filesystem>
+#include <unistd.h>
 
 using namespace std;
 
@@ -13,7 +15,7 @@ bool IsLoggedIn()
     cout << "Enter Username: "; cin >> username;
     cout << "Enter Password: "; cin >> password;
 
-    ifstream read("data\\" + username + ".txt");
+    ifstream read(".\\Accounts\\" + username + ".txt");
     getline(read, un);
     getline(read, pw);
 
@@ -40,7 +42,7 @@ int main()
         cout << "Select a password: "; cin >> password;
 
         ofstream file;
-        file.open("data\\" + username + ".txt");
+        file.open(".\\Accounts\\" + username + ".txt");
         file << username << endl << password;
         file.close();
 
