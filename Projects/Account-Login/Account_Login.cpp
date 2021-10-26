@@ -7,6 +7,7 @@ using namespace std;
 int main()
 {
     //Start of code
+    cout << "Login or Register" << endl;
 
     return 0;
 }
