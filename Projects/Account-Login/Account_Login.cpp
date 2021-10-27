@@ -8,6 +8,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <cstdio>
+#include <Python.h>
+#include <conio.h>
 
 using namespace std;
 
@@ -28,28 +30,15 @@ int options()
                 cout << "1: Confirm Account Deletion\n2: Back\nChoose an option: "; cin >> Confirmation;
                 if (Confirmation == 1)
                 {
-                        string username, password, un, pw;
+                    char filename[] = "Delete.py";
+	                FILE* fp;
 
-                        cout << "Enter Username: "; cin >> username;
-                        cout << "Enter Password: "; cin >> password;
+	                Py_Initialize();
 
-                        ifstream read(".\\Accounts\\" + username + ".txt");
-                        getline(read, un);
-                        getline(read, pw);
+	                fp = _Py_fopen(filename, "r");
+	                PyRun_SimpleFile(fp, filename);
 
-                        if (un == username && pw == password)
-                        {
-                            ofstream file;
-                            file.open (".\\Accounts\\" + username + ".txt");
-                            file << "Deleted" << endl << "Deleted";
-                            cout << "Account Sucessfully Erased!" << endl;
-                            return 1;
-                        }
-                        else
-                        {
-                            cout << "Login Failed. Account not Deleted";
-                            return 0;
-                        }
+	                Py_Finalize();
 
                 }
                 else if (Confirmation == 2)
