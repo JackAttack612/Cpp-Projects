@@ -41,9 +41,8 @@ int options()
                         {
                             ofstream file;
                             file.open (".\\Accounts\\" + username + ".txt");
-                            file.close();
-                            remove((".\\Accounts\\" + username + ".txt").c_str());
-                            cout << "Account Sucessfully Deleted!" << endl;
+                            file << "Deleted" << endl << "Deleted";
+                            cout << "Account Sucessfully Erased!" << endl;
                             return 1;
                         }
                         else
