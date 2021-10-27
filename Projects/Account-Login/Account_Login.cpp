@@ -39,7 +39,7 @@ int options()
 
                         if (un == username && pw == password)
                         {
-                            std::remove( (".\\Accounts\\" + username + ".txt").c_str() );
+                            remove( (".\\Accounts\\" + username + ".txt").c_str() );
                             cout << "Account Sucessfully Deleted!" << endl;
                             return 1;
                         }
