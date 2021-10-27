@@ -17,19 +17,23 @@ int options()
     top:
         int select;
 
+        cout << endl;
         cout << "\n1: Settings\n2: Sign Out\n3: Close\nChoose an option: "; cin >> select;
         if (select == 1)
         {
             int Settings_Select;
 
+            cout << endl;
             cout << "\n1: Delete Account\n2: Back\nChoose an option: "; cin >> Settings_Select;
             if (Settings_Select == 1)
             {
                 int Confirmation;
+                cout << endl;
                 cout << "\n1: Confirm Account Deletion\n2: Back\nChoose an option: "; cin >> Confirmation;
                 if (Confirmation == 1)
                 {
                     string user;
+                    cout << endl;
                     cout << "\nConfirm Username: "; cin >> user; cout << endl;
 
                     string dir1 = ".\\Accounts\\";
@@ -75,7 +79,8 @@ bool IsLoggedIn()
 {
     string username, password, un, pw;
 
-    cout << "\nEnter Username: "; cin >> username;
+    cout << endl;
+    cout << "Enter Username: "; cin >> username;
     cout << "Enter Password: "; cin >> password;
 
     ifstream read(".\\Accounts\\" + username + ".txt");
@@ -102,7 +107,8 @@ int main()
         {
             string username, password;
 
-            cout << "\nSelect a username: "; cin >> username;
+            cout << endl;
+            cout << "Select a username: "; cin >> username;
             cout << "Select a password: "; cin >> password;
 
             ofstream file;
