@@ -31,10 +31,11 @@ int options()
                 {
                     string user;
                     cout << "Confirm Username: "; cin >> user; cout << endl;
-                    
-                    char* fileName =  ".\\Accounts\\" + user + ".txt";
 
-                    if (remove(fileName) == 0)
+                    string dir1 = ".\\Accounts\\";
+                    string dir2 = ".txt";
+
+                    if (remove((dir1 + user + dir2).c_str()) == 0)
                     {
                         cout << "Account Deleted Sucessfully" << endl;
                         goto top;
