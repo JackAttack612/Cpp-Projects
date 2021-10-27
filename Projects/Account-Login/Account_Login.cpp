@@ -16,16 +16,16 @@ int options()
     top:
         int select;
 
-        cout << "1: Settings\n2: Sign Out\n3: Close"; cin >> select;
+        cout << "1: Settings\n2: Sign Out\n3: Close\nChoose an option: "; cin >> select;
         if (select == 1)
         {
             int Settings_Select;
 
-            cout << "1: Delete Account\n2: Back"; cin >> Settings_Select;
+            cout << "1: Delete Account\n2: Back\nChoose an option: "; cin >> Settings_Select;
             if (Settings_Select == 1)
             {
                 int Confirmation;
-                cout << "1: Confirm Account Deletion\n2: Back"; cin >> Confirmation;
+                cout << "1: Confirm Account Deletion\n2: Back\nChoose an option: "; cin >> Confirmation;
                 if (Confirmation == 1)
                 {
                         string username, password, un, pw;
@@ -39,7 +39,10 @@ int options()
 
                         if (un == username && pw == password)
                         {
-                            remove( (".\\Accounts\\" + username + ".txt").c_str() );
+                            ofstream file;
+                            file.open (".\\Accounts\\" + username + ".txt");
+                            file.close();
+                            remove((".\\Accounts\\" + username + ".txt").c_str());
                             cout << "Account Sucessfully Deleted!" << endl;
                             return 1;
                         }
