@@ -7,6 +7,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <cstdio>
 
 using namespace std;
 
@@ -38,8 +39,7 @@ int options()
 
                         if (un == username && pw == password)
                         {
-                            char filename = ".\\Accounts\\" + username + ".txt";
-                            remove(filename);
+                            std::remove( (".\\Accounts\\" + username + ".txt").c_str() );
                             cout << "Account Sucessfully Deleted!" << endl;
                             return 1;
                         }
@@ -67,8 +67,9 @@ int options()
         }
         else if (select == 3)
         {
-            exit()
+            exit(0);
         }
+    return 0;
 }
 
 
