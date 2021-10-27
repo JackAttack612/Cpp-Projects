@@ -42,7 +42,7 @@ int options()
                     if (remove((dir1 + user + dir2).c_str()) == 0)
                     {
                         cout << "Account Deleted Sucessfully" << endl;
-                        goto top;
+                        return 0;
                     }
                     else
                     {
@@ -65,6 +65,7 @@ int options()
         else if (select == 2)
         {
             cout << "Signing you out..." << endl;
+            
             return 1;
         }
         else if (select == 3)
@@ -130,6 +131,7 @@ int main()
             }
             else
             {
+                cout << endl;
                 cout << "Succesfully logged in!" << endl;
                 options();
                 goto start;
