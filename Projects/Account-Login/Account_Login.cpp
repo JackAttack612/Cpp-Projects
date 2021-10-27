@@ -8,7 +8,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <cstdio>
-#include <Python.h>
 #include <conio.h>
 
 using namespace std;
@@ -30,15 +29,22 @@ int options()
                 cout << "1: Confirm Account Deletion\n2: Back\nChoose an option: "; cin >> Confirmation;
                 if (Confirmation == 1)
                 {
-                    char filename[] = "Delete.py";
-	                FILE* fp;
+                    string user;
+                    cout << "Confirm Username: "; cin >> user; cout << endl;
+                    
+                    char* fileName =  ".\\Accounts\\" + user + ".txt";
 
-	                Py_Initialize();
+                    if (remove(fileName) == 0)
+                    {
+                        cout << "Account Deleted Sucessfully" << endl;
+                        goto top;
+                    }
+                    else
+                    {
+                        cout << "Account Deletion Failed." << endl;
+                        goto top;
 
-	                fp = _Py_fopen(filename, "r");
-	                PyRun_SimpleFile(fp, filename);
-
-	                Py_Finalize();
+                    }
 
                 }
                 else if (Confirmation == 2)
