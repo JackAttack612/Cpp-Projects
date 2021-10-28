@@ -16,8 +16,67 @@ int options()
         int select;
 
         cout << endl;
-        cout << "\n1: Settings\n2: Sign Out\n3: Close\nChoose an option: "; cin >> select;
+        cout << "\n1: Programs\n2: Settings\n3: Sign Out\n4: Close\nChoose an option: "; cin >> select;
         if (select == 1)
+        {
+            int game_select;
+
+            cout << "\n1: Bowl Of Rice\n2: Mad Libs\n3: Back\nChoose a Program: "; cin >> game_select;
+            if (game_select == 1)
+            {
+                cout << "\nBowl of Rice:" << endl;
+                cout << "                     //" << endl;
+                cout << "                    //" << endl;
+                cout << "___________________//________" << endl;
+                cout << "\\                          /" << endl;
+                cout << " \\                        /" << endl;
+                cout << "  \\                      /" << endl;
+                cout << "   \\                    /" << endl;
+                cout << "    \\                  /" << endl;
+                cout << "     \\                /" << endl;
+                cout << "      \\______________/" << endl;
+
+                cin.ignore();
+                do 
+                {
+                cout << '\n' << "Press a key to continue...";
+                } while (cin.get() != '\n');
+
+                goto top;
+            }
+            else if (game_select == 2)
+            {   
+                string charName;
+                int charAge;
+                string pronoun;
+                string continuation;
+
+                cout << "\nWhat is your characters name: ";
+                getline(cin, charName);
+                cout << "What is your characters age: ";
+                cin >> charAge;
+                cin.ignore();
+                cout << "What are your characters pronouns (He or She): ";
+                getline(cin, pronoun);
+                cout << endl << "There one was a " << pronoun << " named " << charName<< endl;
+                cout << pronoun << " was " << charAge << " years old" << endl;
+                cout << pronoun << " really liked the name " << charName << endl;
+                cout << "but didn't like being " << charAge << "." << endl;
+
+                cin.ignore();
+                do 
+                {
+                cout << '\n' << "Press a key to continue...";
+                } while (cin.get() != '\n');
+
+                goto top;
+            }
+            else if (game_select == 3)
+            {
+                goto top;
+            }
+        }
+        else if (select == 2)
         {
             int Settings_Select;
 
@@ -60,13 +119,13 @@ int options()
                 goto top;
             }
         }
-        else if (select == 2)
+        else if (select == 3)
         {
             cout << "Signing you out..." << endl;
             
             return 1;
         }
-        else if (select == 3)
+        else if (select == 4)
         {
             exit(0);
         }
@@ -217,7 +276,7 @@ int main()
 
             if (!nimda_status)
             {
-                cout << "False Login!" << endl;
+                cout << "Error: Could not Login, check your username and password!" << endl;
                 goto start;
                 return 0;
             }
