@@ -1,5 +1,3 @@
-//Login or Register an Account (Using code from a video tutorial)
-
 #include <iostream>
 #include <fstream>
 #include <string>
