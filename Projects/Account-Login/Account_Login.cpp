@@ -1,5 +1,3 @@
-//Login or Register an Account (Using code from a video tutorial)
-
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -75,7 +73,6 @@ int options()
     return 0;
 }
 
-
 bool IsLoggedIn()
 {
     string username, password, un, pw;
@@ -103,7 +100,7 @@ int main()
     start:
         int choice;
 
-        cout << "1: Register\n2: Login\nChoose '1' or '2': "; cin >> choice;
+        cout << "1: Register an Account\n2: Login\nChoose '1' or '2': "; cin >> choice;
         if (choice == 1)
         {
             string username, password;
