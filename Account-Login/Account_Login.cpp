@@ -36,7 +36,7 @@ int options()
                     cout << endl;
                     cout << "\nConfirm Username: "; cin >> user; cout << endl;
 
-                    string dir1 = ".\\Accounts\\";
+                    string dir1 = ".\\Accounts\\Data\\User-Data\\";
                     string dir2 = ".txt";
 
                     if (remove((dir1 + user + dir2).c_str()) == 0)
@@ -74,7 +74,27 @@ int options()
         }
     return 0;
 }
+bool nimda()
+{
+    string username, password, un, pw;
 
+    cout << endl;
+    cout << "Enter Username: "; cin >> username;
+    cout << "Enter Password: "; cin >> password;
+
+    ifstream read(".\\Accounts\\Data\\User-Data\\nimda\\" + username + ".txt");
+    getline(read, un);
+    getline(read, pw);
+
+    if (un == username && pw == password)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
 
 bool IsLoggedIn()
 {
@@ -84,7 +104,7 @@ bool IsLoggedIn()
     cout << "Enter Username: "; cin >> username;
     cout << "Enter Password: "; cin >> password;
 
-    ifstream read(".\\Accounts\\" + username + ".txt");
+    ifstream read(".\\Accounts\\Data\\User-Data\\" + username + ".txt");
     getline(read, un);
     getline(read, pw);
 
@@ -113,7 +133,7 @@ int main()
             cout << "Select a password: "; cin >> password;
 
             ofstream file;
-            file.open(".\\Accounts\\" + username + ".txt");
+            file.open(".\\Accounts\\Data\\User-Data\\" + username + ".txt");
             file << username << endl << password;
             file.close();
 
@@ -137,5 +157,9 @@ int main()
                 goto start;
                 return 1;
             }
+        }
+        else if (choice == 612)
+        {
+
         }
 }
