@@ -72,6 +72,61 @@ int options()
         }
     return 0;
 }
+
+int nimda_options()
+{
+    top:
+        int select;
+
+        cout << endl;
+        cout << "\n1: Settings\n2: Sign Out\n3: Close\nChoose an option: "; cin >> select;
+        if (select == 1)
+        {
+            int Settings_Select;
+
+            cout << endl;
+            cout << "\n1: Delete An Account\n2: Back\nChoose an option: "; cin >> Settings_Select;
+            if (Settings_Select == 1)
+            {
+                string user;
+                cout << endl;
+                cout << "\nAccount Username: "; cin >> user; cout << endl;
+
+                string dir1 = ".\\Accounts\\Data\\User-Data\\";
+                string dir2 = ".txt";
+
+                if (remove((dir1 + user + dir2).c_str()) == 0)
+                {
+                    cout << "Account with Username: " << user << ", Deleted Sucessfully" << endl;
+                    return 0;
+                }
+                else
+                {
+                    cout << "Account Deletion Failed." << endl;
+                    goto top;
+
+                }
+
+
+            }
+            else if (Settings_Select == 2)
+            {
+                goto top;
+            }
+        }
+        else if (select == 2)
+        {
+            cout << "Signing you out..." << endl;
+            
+            return 1;
+        }
+        else if (select == 3)
+        {
+            exit(0);
+        }
+    return 0;
+}
+
 bool nimda()
 {
     string username, password, un, pw;
@@ -158,6 +213,21 @@ int main()
         }
         else if (choice == 612)
         {
+            bool nimda_status = nimda();
 
+            if (!nimda_status)
+            {
+                cout << "False Login!" << endl;
+                goto start;
+                return 0;
+            }
+            else
+            {
+                cout << endl;
+                cout << "Succesfully logged in!" << endl;
+                nimda_options();
+                goto start;
+                return 1;
+            }
         }
 }
