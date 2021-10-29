@@ -1,0 +1,6 @@
+!!!READ BEFORE INSTALLING!!!
+
+To use the program go into the installation location, Default install folder is 'C:\Program Files (x86)\Jet_C++\Cpp-Projects\Account-Login' and open the Account-Login.exe
+
+
+You may make a shortcut to desktop

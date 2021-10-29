@@ -172,7 +172,8 @@ int options()
         }
         else if (select == 3)
         {
-            cout << "Signing you out..." << endl;
+            cout << endl;
+            cout << "Signing you out...";
             
             return 1;
         }
