@@ -51,8 +51,11 @@ int options()
                 string pronoun;
                 string continuation;
 
+
+                cin.ignore();
                 cout << "\nWhat is your characters name: ";
                 getline(cin, charName);
+                cin.ignore();
                 cout << "What is your characters age: ";
                 cin >> charAge;
                 cin.ignore();
