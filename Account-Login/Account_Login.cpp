@@ -21,7 +21,7 @@ int options()
         {
             int game_select;
 
-            cout << "\n1: Bowl Of Rice\n2: Mad Libs\n3: Back\nChoose a Program: "; cin >> game_select;
+            cout << "\n1: Bowl Of Rice\n2: Mad Libs\n3: Guessing Game\n4: Back\nChoose a Program: "; cin >> game_select;
             if (game_select == 1)
             {
                 cout << "\nBowl of Rice:" << endl;
@@ -73,6 +73,44 @@ int options()
             }
             else if (game_select == 3)
             {
+                int secretNum = 69;
+                int guess;
+                bool win = false;
+
+                while(win == false)
+                {
+                    cout << "\n";
+                    cout << "Guess a number from 1-100: "; cin >> guess;
+                    if (guess == secretNum)
+                    {
+                        win == true;
+                        break;
+                    }
+                    else if (guess != secretNum)
+                    {
+                        win == false;
+                        cout << "\nYou guessed wrong. Try Again";
+                    }
+                }
+
+                cout << "\nYou guessed it right! The Number was: " << secretNum;
+                
+                cin.ignore();
+                do 
+                {
+                cout << "\n";
+                cout << "Press a key to continue...";
+                } while (cin.get() != '\n');
+
+                goto top;
+            }
+            else if (game_select == 4)
+            {
+                goto top;
+            }
+            else
+            {
+                cout << "\nYou did not select a valid option.";
                 goto top;
             }
         }
@@ -113,9 +151,19 @@ int options()
                 {
                     goto top;
                 }
+                else
+                {
+                    cout << "\nYou did not select a valid option.";
+                    goto top;
+                }
             }
             else if (Settings_Select == 2)
             {
+                goto top;
+            }
+            else
+            {
+                cout << "\nYou did not select a valid option.";
                 goto top;
             }
         }
@@ -128,6 +176,11 @@ int options()
         else if (select == 4)
         {
             exit(0);
+        }
+        else
+        {
+            cout << "\nYou did not select a valid option";
+            goto top;
         }
     return 0;
 }
@@ -182,6 +235,11 @@ int nimda_options()
         else if (select == 3)
         {
             exit(0);
+        }
+        else
+        {
+            cout << "\nYou did not select a valid option.";
+            goto top;
         }
     return 0;
 }
@@ -288,5 +346,10 @@ int main()
                 goto start;
                 return 1;
             }
+        }
+        else
+        {
+            cout << "\nYou did not select a valid option.\n";
+            goto start;
         }
 }
