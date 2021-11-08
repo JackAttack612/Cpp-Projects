@@ -15,8 +15,13 @@ int options()
     top:
         int select;
 
-        cout << endl;
-        cout << "\n1: Programs\n2: Settings\n3: Sign Out\n4: Close\nChoose an option: "; cin >> select;
+        cout << "\n";
+        cout << "╔═══════════════════════════════╗" << endl;
+        cout << "‖ [1] Programs    ‖ [4] Close   ‖" << endl;
+        cout << "‖ [2] Settings    ‖             ‖" << endl;
+        cout << "‖ [3] Sign out    ‖             ‖" << endl;
+        cout << "╚═══════════════════════════════╝" << endl;
+        cout << "Choose an option: "; cin >> select;
         if (select == 1)
         {
             int game_select;
