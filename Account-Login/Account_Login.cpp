@@ -15,18 +15,39 @@ int options()
     top:
         int select;
 
-        cout << "\n";
-        cout << "╔═══════════════════════════════╗" << endl;
-        cout << "‖ [1] Programs    ‖ [4] Close   ‖" << endl;
-        cout << "‖ [2] Settings    ‖             ‖" << endl;
-        cout << "‖ [3] Sign out    ‖             ‖" << endl;
-        cout << "╚═══════════════════════════════╝" << endl;
+        cout << "\n\n\n";
+
+        std::cout
+        << "********************************\n"
+        << "*     == Selection Menu ==     *\n"
+        << "*                              *\n"
+        << "* [1] Programs                 *\n"
+        << "* [2] Settings                 *\n"
+        << "* [3] Sign out                 *\n"
+        << "* [4] Close                    *\n"
+        << "*                              *\n"
+        << "********************************\n";
+
         cout << "Choose an option: "; cin >> select;
         if (select == 1)
         {
             int game_select;
 
-            cout << "\n1: Bowl Of Rice\n2: Mad Libs\n3: Guessing Game\n4: Back\nChoose a Program: "; cin >> game_select;
+            cout << "\n\n\n";
+
+            std::cout
+            << "********************************\n"
+            << "*     == Selection Menu ==     *\n"
+            << "*                              *\n"
+            << "* [1] Bowl of Rice             *\n"
+            << "* [2] Mad Libs                 *\n"
+            << "* [3] Guessing Game            *\n"
+            << "* [4] Back                     *\n"
+            << "*                              *\n"
+            << "********************************\n";
+
+            cout << "\nChoose a Program: "; cin >> game_select;
+
             if (game_select == 1)
             {
                 cout << "\n\n\n";
@@ -154,13 +175,31 @@ int options()
         {
             int Settings_Select;
 
-            cout << endl;
-            cout << "\n1: Delete Account\n2: Back\nChoose an option: "; cin >> Settings_Select;
+            cout << "\n\n\n";
+
+            std::cout
+            << "********************************\n"
+            << "*     == Selection Menu ==     *\n"
+            << "*                              *\n"
+            << "* [1] Delete Account           *\n"
+            << "* [2] Back                     *\n"
+            << "*                              *\n"
+            << "********************************\n";
+            cout << "\nChoose an option: "; cin >> Settings_Select;
             if (Settings_Select == 1)
             {
                 int Confirmation;
-                cout << endl;
-                cout << "\n1: Confirm Account Deletion\n2: Back\nChoose an option: "; cin >> Confirmation;
+                cout << "\n\n\n";
+
+                std::cout
+                << "********************************\n"
+                << "*    == Confirmation Menu ==   *\n"
+                << "*                              *\n"
+                << "* [1] Confirm Account Deletion *\n"
+                << "* [2] Back                     *\n"
+                << "*                              *\n"
+                << "********************************\n";
+                cout << "\nChoose an option: "; cin >> Confirmation;
                 if (Confirmation == 1)
                 {
                     string user;
@@ -206,7 +245,7 @@ int options()
         else if (select == 3)
         {
             cout << endl;
-            cout << "Signing you out...";
+            cout << "Signing you out..." << endl;
             
             return 1;
         }
@@ -222,86 +261,6 @@ int options()
     return 0;
 }
 
-int nimda_options()
-{
-    top:
-        int select;
-
-        cout << endl;
-        cout << "\n1: Settings\n2: Sign Out\n3: Close\nChoose an option: "; cin >> select;
-        if (select == 1)
-        {
-            int Settings_Select;
-
-            cout << endl;
-            cout << "\n1: Delete An Account\n2: Back\nChoose an option: "; cin >> Settings_Select;
-            if (Settings_Select == 1)
-            {
-                string user;
-                cout << endl;
-                cout << "\nAccount Username: "; cin >> user; cout << endl;
-
-                string dir1 = ".\\Accounts\\Data\\User-Data\\";
-                string dir2 = ".txt";
-
-                if (remove((dir1 + user + dir2).c_str()) == 0)
-                {
-                    cout << "Account with Username: " << user << ", Deleted Sucessfully" << endl;
-                    return 0;
-                }
-                else
-                {
-                    cout << "Account Deletion Failed." << endl;
-                    goto top;
-
-                }
-
-
-            }
-            else if (Settings_Select == 2)
-            {
-                goto top;
-            }
-        }
-        else if (select == 2)
-        {
-            cout << "Signing you out..." << endl;
-            
-            return 1;
-        }
-        else if (select == 3)
-        {
-            exit(0);
-        }
-        else
-        {
-            cout << "\nYou did not select a valid option.";
-            goto top;
-        }
-    return 0;
-}
-
-bool nimda()
-{
-    string username, password, un, pw;
-
-    cout << endl;
-    cout << "Enter Username: "; cin >> username;
-    cout << "Enter Password: "; cin >> password;
-
-    ifstream read(".\\Accounts\\Data\\User-Data\\nimda\\" + username + ".txt");
-    getline(read, un);
-    getline(read, pw);
-
-    if (un == username && pw == password)
-    {
-        return true;
-    }
-    else
-    {
-        return false;
-    }
-}
 
 bool IsLoggedIn()
 {
@@ -330,7 +289,16 @@ int main()
     start:
         int choice;
 
-        cout << "1: Register\n2: Login\nChoose '1' or '2': "; cin >> choice;
+        std::cout
+        << "********************************\n"
+        << "*       == Login Menu ==       *\n"
+        << "*                              *\n"
+        << "* [1] Register                 *\n"
+        << "* [2] Login                    *\n"
+        << "* [3] Sign in as Guest         *\n"
+        << "*                              *\n"
+        << "********************************\n";
+        cout << "Choose an option: "; cin >> choice;
         if (choice == 1)
         {
             string username, password;
@@ -343,6 +311,8 @@ int main()
             file.open(".\\Accounts\\Data\\User-Data\\" + username + ".txt");
             file << username << endl << password;
             file.close();
+
+            cout << "\n";
 
             main();
         }
@@ -365,24 +335,12 @@ int main()
                 return 1;
             }
         }
-        else if (choice == 612)
+        else if (choice == 3)
         {
-            bool nimda_status = nimda();
-
-            if (!nimda_status)
-            {
-                cout << "Error: Could not Login, check your username and password!" << endl;
-                goto start;
-                return 0;
-            }
-            else
-            {
-                cout << endl;
-                cout << "Succesfully logged in!" << endl;
-                nimda_options();
-                goto start;
-                return 1;
-            }
+            cout << "\nLogged in as Guest" << endl;
+             options();
+             goto start;
+             return 1;
         }
         else
         {
