@@ -348,6 +348,7 @@ int main()
             if (!status)
             {
                 cout << "False Login!" << endl;
+                cout << "\n";
                 goto start;
                 return 0;
             }
