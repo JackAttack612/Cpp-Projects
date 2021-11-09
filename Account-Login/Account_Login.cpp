@@ -2,11 +2,11 @@
 #include <fstream>
 #include <string>
 #include <filesystem>
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <cstdio>
 #include <conio.h>
+#include <time.h> 
 
 using namespace std;
 
@@ -121,7 +121,7 @@ int options()
             }
             else if (game_select == 3)
             {
-                int secretNum = 80;
+                int secretNum = rand() % 20 + 1;;
                 int guess;
                 bool win = false;
 
@@ -137,7 +137,7 @@ int options()
                 while(win == false)
                 {
                     cout << "\n";
-                    cout << "Guess a number from 1-100: "; cin >> guess;
+                    cout << "Guess a number from 1-20: "; cin >> guess;
                     if (guess == secretNum)
                     {
                         win == true;
