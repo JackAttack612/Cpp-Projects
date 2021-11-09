@@ -37,7 +37,7 @@ int options()
 
             std::cout
             << "********************************\n"
-            << "*     == Selection Menu ==     *\n"
+            << "*      == Program Menu ==      *\n"
             << "*                              *\n"
             << "* [1] Bowl of Rice             *\n"
             << "* [2] Mad Libs                 *\n"
@@ -179,7 +179,7 @@ int options()
 
             std::cout
             << "********************************\n"
-            << "*     == Selection Menu ==     *\n"
+            << "*      == Settings Menu ==     *\n"
             << "*                              *\n"
             << "* [1] Delete Account           *\n"
             << "* [2] Back                     *\n"
@@ -264,11 +264,22 @@ int options()
 
 bool IsLoggedIn()
 {
-    string username, password, un, pw;
+    string username, un, pw;
 
     cout << endl;
     cout << "Enter Username: "; cin >> username;
-    cout << "Enter Password: "; cin >> password;
+    std::string password;
+    char ch;
+    const char ENTER = 13;
+
+    std::cout << "Enter password: ";
+
+    while((ch = _getch()) != ENTER)
+    {
+        password += ch;
+        std::cout << '*';
+    }
+    
 
     ifstream read(".\\Accounts\\Data\\User-Data\\" + username + ".txt");
     getline(read, un);
