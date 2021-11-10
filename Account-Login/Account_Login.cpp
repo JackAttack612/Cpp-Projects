@@ -124,6 +124,7 @@ int options()
                 int secretNum = rand() % 20 + 1;;
                 int guess;
                 bool win = false;
+                int guesses = 1;
 
                 cout << "\n\n\n" << endl;
                 cout << "   _____ _    _ ______  _____ _____ _____ _   _  _____    _____          __  __ ______ " << endl;
@@ -147,15 +148,16 @@ int options()
                     {
                         win == false;
                         cout << "\nYou guessed wrong. Try Again";
+                        guess = guess + 1;
                     }
                 }
 
-                cout << "\nYou guessed it right! The Number was: " << secretNum;
+                cout << "\nYou guessed it right! The Number was: " << secretNum << endl;
+                cout << "You took " << guesses << " guess(es)" << endl;
                 
                 cin.ignore();
                 do 
                 {
-                cout << "\n";
                 cout << "Press a key to continue...";
                 } while (cin.get() != '\n');
 
