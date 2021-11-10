@@ -219,6 +219,7 @@ int options()
                     if (remove((dir1 + user + dir2).c_str()) == 0)
                     {
                         cout << "Account Deleted Sucessfully" << endl;
+                        Sleep(3000);
                         return 0;
                     }
                     else
@@ -344,7 +345,8 @@ int main()
 
             if (!status)
             {
-                cout << "False Login!" << endl;
+                cout << "\nFalse Login!" << endl;
+                Sleep(3000);
                 cout << "\n";
                 goto start;
                 return 0;
@@ -353,6 +355,7 @@ int main()
             {
                 cout << endl;
                 cout << "Succesfully logged in!" << endl;
+                Sleep(3000);
                 options();
                 goto start;
                 return 1;
