@@ -7,6 +7,7 @@
 #include <cstdio>
 #include <conio.h>
 #include <time.h> 
+#include <windows.h>
 
 using namespace std;
 
