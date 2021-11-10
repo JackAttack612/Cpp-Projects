@@ -8,19 +8,10 @@
 #include <conio.h>
 #include <time.h> 
 #include <windows.h>
-#include <chrono.
+#include <chrono.>
 #include <thread>
 
 using namespace std;
-
-int error()
-{
-    using namespace std::this_thread;     // sleep_for, sleep_until
-    using namespace std::chrono_literals; // ns, us, ms, s, h, etc.
-    using std::chrono::system_clock;
-
-    sleep_for(3s);
-}
 
 int options()
 {
@@ -183,6 +174,7 @@ int options()
             else
             {
                 cout << "\nYou did not select a valid option.";
+                Sleep(3000);
                 goto top;
             }
         }
@@ -232,6 +224,7 @@ int options()
                     else
                     {
                         cout << "Account Deletion Failed." << endl;
+                        Sleep(3000);
                         goto top;
 
                     }
@@ -244,6 +237,7 @@ int options()
                 else
                 {
                     cout << "\nYou did not select a valid option.";
+                    Sleep(3000);
                     goto top;
                 }
             }
@@ -254,6 +248,7 @@ int options()
             else
             {
                 cout << "\nYou did not select a valid option.";
+                Sleep(3000);
                 goto top;
             }
         }
@@ -271,6 +266,7 @@ int options()
         else
         {
             cout << "\nYou did not select a valid option";
+            Sleep(3000);
             goto top;
         }
     return 0;
@@ -372,6 +368,7 @@ int main()
         else
         {
             cout << "\nYou did not select a valid option.\n";
+            Sleep(3000);
             goto start;
         }
 }
