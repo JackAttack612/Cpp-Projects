@@ -209,7 +209,7 @@ int options()
                     cout << endl;
                     cout << "\nConfirm Username: "; cin >> user; cout << endl;
 
-                    string dir1 = ".\\Accounts\\Data\\User-Data\\";
+                    string dir1 = ".\\Account-Login\\Accounts\\Data\\User-Data\\";
                     string dir2 = ".txt";
 
                     if (remove((dir1 + user + dir2).c_str()) == 0)
@@ -284,7 +284,7 @@ bool IsLoggedIn()
     }
     
 
-    ifstream read(".\\Accounts\\Data\\User-Data\\" + username + ".txt");
+    ifstream read(".\\Account-Login\\Accounts\\Data\\User-Data\\" + username + ".txt");
     getline(read, un);
     getline(read, pw);
 
@@ -322,7 +322,7 @@ int main()
             cout << "Select a password: "; cin >> password;
 
             ofstream file;
-            file.open(".\\Accounts\\Data\\User-Data\\" + username + ".txt");
+            file.open(".\\Account-Login\\Accounts\\Data\\User-Data\\" + username + ".txt");
             file << username << endl << password;
             file.close();
 
