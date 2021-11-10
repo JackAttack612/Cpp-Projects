@@ -411,7 +411,7 @@ int main()
             {
                 cout << endl;
                 cout << "Succesfully logged in!" << endl;
-                Sleep(3000);
+                Sleep(2000);
                 options();
                 goto start;
                 return 1;
@@ -419,10 +419,11 @@ int main()
         }
         else if (choice == 3)
         {
-            cout << "\nLogged in as Guest" << endl;
-             options();
-             goto start;
-             return 1;
+            cout << "\nLogging in as Guest" << endl;
+            Sleep(2000);
+            options();
+            goto start;
+            return 1;
         }
         else
         {
