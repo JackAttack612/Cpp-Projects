@@ -121,6 +121,7 @@ int options()
             }
             else if (game_select == 3)
             {
+                srand(time(0));
                 int secretNum = rand() % 20 + 1;;
                 int guess;
                 bool win = false;
@@ -148,7 +149,7 @@ int options()
                     {
                         win == false;
                         cout << "\nYou guessed wrong. Try Again";
-                        guess = guess + 1;
+                        guesses = guesses + 1;
                     }
                 }
 
