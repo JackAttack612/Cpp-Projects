@@ -291,7 +291,7 @@ bool IsLoggedIn()
         {
             std::cout << "Enter password: ";
 
-            while(ch=getch()) //assign Ascii value to ch
+            while(ch=getch())
             { 
                 if(ch == 13)
                 {
@@ -300,15 +300,15 @@ bool IsLoggedIn()
                 else if(ch==8)
                 {
                     if(password.length()>0)
-                    {//set condition blocking error while input
-                        cout<<"\b \b";//remove Mask * on screen;
-                        password.erase(password.length()-1); //erase String length
+                    {
+                        cout<<"\b \b";
+                        password.erase(password.length()-1);
                     }
                 }
                 else
                 {
                     cout<<"*";
-                    password += ch; //the input password was assigned to variable passwd.
+                    password += ch;
                 }
             }
         }
@@ -321,7 +321,7 @@ bool IsLoggedIn()
             cout << "You did not select a valid option. Your Password will be hidden." << endl;
             std::cout << "Enter password: ";
 
-            while(ch=getch()) //assign Ascii value to ch
+            while(ch=getch())
             { 
                 if(ch == 13)
                 {
@@ -330,15 +330,15 @@ bool IsLoggedIn()
                 else if(ch==8)
                 {
                     if(password.length()>0)
-                    {//set condition blocking error while input
-                        cout<<"\b \b";//remove Mask * on screen;
-                        password.erase(password.length()-1); //erase String length
+                    {
+                        cout<<"\b \b";
+                        password.erase(password.length()-1);
                     }
                 }
                 else
                 {
                     cout<<"*";
-                    password += ch; //the input password was assigned to variable passwd.
+                    password += ch;
                 }
             }
         }
