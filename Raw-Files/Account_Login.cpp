@@ -8,8 +8,6 @@
 #include <conio.h>
 #include <time.h> 
 #include <windows.h>
-#include <chrono.>
-#include <thread>
 
 using namespace std;
 
@@ -280,33 +278,93 @@ bool IsLoggedIn()
 
     cout << endl;
     cout << "Enter Username: "; cin >> username;
-    std::string password;
-    char ch;
-    const char ENTER = 13;
-
-    std::cout << "Enter password: ";
-
-    while((ch = _getch()) != ENTER)
+    if (FILE *file = fopen((".\\Account-Login\\Accounts\\Data\\User-Data\\" + username + ".txt").c_str(), "r")) 
     {
-        password += ch;
-        std::cout << '*';
+        fclose(file);
+        std::string password;
+        int count=0,ch;
+        char yn;
+
+        cout << "Show Password (Y/N): "; cin >> yn;
+
+        if (yn == 'n' | yn == 'N')
+        {
+            std::cout << "Enter password: ";
+
+            while(ch=getch()) //assign Ascii value to ch
+            { 
+                if(ch == 13)
+                {
+                    break;
+                }
+                else if(ch==8)
+                {
+                    if(password.length()>0)
+                    {//set condition blocking error while input
+                        cout<<"\b \b";//remove Mask * on screen;
+                        password.erase(password.length()-1); //erase String length
+                    }
+                }
+                else
+                {
+                    cout<<"*";
+                    password += ch; //the input password was assigned to variable passwd.
+                }
+            }
+        }
+        else if (yn == 'y' | yn == 'Y')
+        {
+            cout << "Enter password: "; cin >> password;
+        }
+        else
+        {
+            cout << "You did not select a valid option. Your Password will be hidden." << endl;
+            std::cout << "Enter password: ";
+
+            while(ch=getch()) //assign Ascii value to ch
+            { 
+                if(ch == 13)
+                {
+                    break;
+                }
+                else if(ch==8)
+                {
+                    if(password.length()>0)
+                    {//set condition blocking error while input
+                        cout<<"\b \b";//remove Mask * on screen;
+                        password.erase(password.length()-1); //erase String length
+                    }
+                }
+                else
+                {
+                    cout<<"*";
+                    password += ch; //the input password was assigned to variable passwd.
+                }
+            }
+        }
+        ifstream read(".\\Account-Login\\Accounts\\Data\\User-Data\\" + username + ".txt");
+        getline(read, un);
+        getline(read, pw);
+
+        if (un == username && pw == password)
+        {
+            return true;
+        }
+        else
+        {
+            cout << "\nError: Password Incorrect" << endl;
+            Sleep(3000);
+            return false;
+        }
     }
-    
-
-    ifstream read(".\\Account-Login\\Accounts\\Data\\User-Data\\" + username + ".txt");
-    getline(read, un);
-    getline(read, pw);
-
-    if (un == username && pw == password)
+    else 
     {
-        return true;
-    }
-    else
-    {
+        cout << "Error: Username Does not Exist" << endl;
+        Sleep(3000);
         return false;
-    }
+    }   
 }
-
+    
 int main()
 {
     start:
@@ -345,8 +403,6 @@ int main()
 
             if (!status)
             {
-                cout << "\nFalse Login!" << endl;
-                Sleep(3000);
                 cout << "\n";
                 goto start;
                 return 0;
