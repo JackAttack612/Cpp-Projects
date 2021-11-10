@@ -159,7 +159,7 @@ int options()
                 cin.ignore();
                 do 
                 {
-                cout << "Press a key to continue...";
+                cout << "\nPress a key to continue...";
                 } while (cin.get() != '\n');
 
                 goto top;
