@@ -211,7 +211,7 @@ int options()
                     cout << endl;
                     cout << "\nConfirm Username: "; cin >> user; cout << endl;
 
-                    string dir1 = ".\\Account-Login\\Accounts\\Data\\User-Data\\";
+                    string dir1 = ".\\Data\\Accounts\\Data\\User-Data\\";
                     string dir2 = ".txt";
 
                     if (remove((dir1 + user + dir2).c_str()) == 0)
@@ -278,7 +278,7 @@ bool IsLoggedIn()
 
     cout << endl;
     cout << "Enter Username: "; cin >> username;
-    if (FILE *file = fopen((".\\Account-Login\\Accounts\\Data\\User-Data\\" + username + ".txt").c_str(), "r")) 
+    if (FILE *file = fopen((".\\Data\\Accounts\\Data\\User-Data\\" + username + ".txt").c_str(), "r")) 
     {
         fclose(file);
         std::string password;
@@ -342,7 +342,7 @@ bool IsLoggedIn()
                 }
             }
         }
-        ifstream read(".\\Account-Login\\Accounts\\Data\\User-Data\\" + username + ".txt");
+        ifstream read(".\\Data\\Accounts\\Data\\User-Data\\" + username + ".txt");
         getline(read, un);
         getline(read, pw);
 
@@ -389,7 +389,7 @@ int main()
             cout << "Select a password: "; cin >> password;
 
             ofstream file;
-            file.open(".\\Account-Login\\Accounts\\Data\\User-Data\\" + username + ".txt");
+            file.open(".\\Data\\Accounts\\Data\\User-Data\\" + username + ".txt");
             file << username << endl << password;
             file.close();
 
