@@ -168,6 +168,10 @@ int options()
             }
             else if (game_select == 4)
             {
+                ShellExecute(NULL, "open", ".\\Programs\\snake-game\\snake.exe", NULL, NULL, SW_SHOWDEFAULT);
+            }
+            else if (game_select == 5)
+            {
                 goto top;
             }
             else
