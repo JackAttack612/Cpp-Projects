@@ -181,7 +181,7 @@ int options()
                         goto top;
                     }
             }
-            else if (select == '3')
+            else if (select == '2')
             {
                 cout << "\nVersion: V1.0.1" << endl;
                 cout << "Changelog: https://github.com/JackAttack612/JetHub/commits/V1.0.1" << endl;
