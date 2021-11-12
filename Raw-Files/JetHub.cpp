@@ -22,9 +22,10 @@ int options()
         << "*     == Selection Menu ==     *\n"
         << "*                              *\n"
         << "* [1] Programs                 *\n"
-        << "* [2] Settings                 *\n"
-        << "* [3] Sign out                 *\n"
-        << "* [4] Close                    *\n"
+        << "* [2] Info                     *\n"
+        << "* [3] Settings                 *\n"
+        << "* [4] Sign out                 *\n"
+        << "* [5] Close                    *\n"
         << "*                              *\n"
         << "********************************\n";
         char select = _getch();
@@ -180,7 +181,22 @@ int options()
                         goto top;
                     }
             }
-            else if (select == '2')
+            else if (select == '3')
+            {
+                cout << "\nVersion: V1.0.1" << endl;
+                cout << "Changelog: https://github.com/JackAttack612/JetHub/commits/V1.0.1" << endl;
+                cout << "Github Repository: https://github.com/JackAttack612/JetHub" << endl;
+                cout << "Code Language: C++" << endl;
+
+                do 
+                {
+                    cout << "\nPress a key to continue...";
+                } while (cin.get() != '\n');
+
+                    goto top;
+                
+            }
+            else if (select == '3')
             {
                 cout << "\n\n\n";
 
@@ -252,14 +268,14 @@ int options()
                         goto top;
                     }
             }
-            else if (select == '3')
+            else if (select == '4')
             {
                 cout << endl;
                 cout << "Signing you out..." << endl;
                 
                 return 1;
             }
-            else if (select == '4')
+            else if (select == '5')
             {
                 exit(0);
             }
