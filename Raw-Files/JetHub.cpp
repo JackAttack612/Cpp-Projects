@@ -183,17 +183,18 @@ int options()
             }
             else if (select == '2')
             {
-                cout << "\nVersion: V1.0.1" << endl;
+                cout << "\nVersion: V1.0.1 (Beta)" << endl;
                 cout << "Changelog: https://github.com/JackAttack612/JetHub/commits/V1.0.1" << endl;
                 cout << "Github Repository: https://github.com/JackAttack612/JetHub" << endl;
                 cout << "Code Language: C++" << endl;
 
+                cin.ignore();
                 do 
                 {
-                    cout << "\nPress a key to continue...";
+                    cout << '\n' << "Press a key to continue...";
                 } while (cin.get() != '\n');
 
-                    goto top;
+                goto top;
                 
             }
             else if (select == '3')
