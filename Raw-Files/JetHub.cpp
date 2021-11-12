@@ -40,7 +40,7 @@ int options()
                 << "* [1] Bowl of Rice             *\n"
                 << "* [2] Mad Libs                 *\n"
                 << "* [3] Guessing Game            *\n"
-                << "* [4] Snake                    *\n"
+                << "* [4] Snake (buggy)            *\n"
                 << "* [5] Back                     *\n"
                 << "*                              *\n"
                 << "********************************\n";
