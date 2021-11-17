@@ -223,7 +223,7 @@ int options()
                         << "*                              *\n"
                         << "********************************\n";
                         char Confirmation = _getch();
-                            if (Confirmation == 1)
+                            if (Confirmation == '1')
                             {
                                 string user;
                                 cout << endl;
@@ -247,7 +247,7 @@ int options()
                                 }
 
                             }
-                            else if (Confirmation == 2)
+                            else if (Confirmation == '2')
                             {
                                 goto top;
                             }
